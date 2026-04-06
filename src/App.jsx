@@ -1,31 +1,52 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import ComingSoonPage from './pages/CommingSoonPage.jsx'
-import NotFoundPage from './pages/NotFoundPage.jsx'
-import GlobalStyle from './styles/GlobalStyle.js'
-import ExamplePage from './pages/ExamplePage.jsx'
+// src/App.jsx
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-// Criando uma array para definir as rotas do site utilizando a função createBrowserRouter importada
+// Páginas principais
+import ComingSoonPage from "./pages/CommingSoonPage.jsx";
+import NotFoundPage from "./pages/NotFoundPage.jsx";
+import ExamplePage from "./pages/ExamplePage.jsx";
+import GlobalStyle from "./styles/GlobalStyle.js";
+
+// Páginas de login
+import LoginCliente from "./pages/Login/LoginCliente.jsx";
+import LoginDoador from "./pages/Login/LoginDoador.jsx";
+
 const router = createBrowserRouter([
+  // Página inicial
   {
-    path: '/',
+    path: "/",
     element: <ComingSoonPage />,
-    // Error element aparece no caso de digitar um endereço que não existe, link com caminho errado ou erros de carregamento
-    // Apenas essa declaração de error element aparece em caso de erro em qualquer página
-    errorElement: <NotFoundPage />
+    errorElement: <NotFoundPage />,
+  },
+
+  // Página de exemplo
+  {
+    path: "/example",
+    element: <ExamplePage />,
+  },
+
+  // Rotas de login
+  {
+    path: "/login/cliente",
+    element: <LoginCliente />,
   },
   {
-    path: '/example',
-    element: <ExamplePage />
-  }
-])
+    path: "/login/doador",
+    element: <LoginDoador />,
+  },
+
+  // Rota de erro genérica
+  {
+    path: "*",
+    element: <NotFoundPage />,
+  },
+]);
 
 export default function App() {
-
   return (
     <>
       <GlobalStyle />
-      {/* RouterProvider fornece as rotas definidas acima para serem renderizadas através do atríbuto router */}
       <RouterProvider router={router} />
     </>
-  )
+  );
 }
