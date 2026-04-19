@@ -1,10 +1,11 @@
+import {PButton} from "./styles.js";
 
 
 export default function PrimaryButton({label, ref, icon}) {
     return (
-        <a href={ref} rel="noopener noreferrer">
+        <PButton href={ref} rel="noopener noreferrer">
             {label}
             {icon}
-        </a>
+        </PButton>
     )
 }

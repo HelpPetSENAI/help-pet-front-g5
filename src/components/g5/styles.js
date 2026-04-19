@@ -15,17 +15,27 @@ export const LogoContainer = styled.a `
     align-items: center;
     gap: 10px;
     cursor: pointer;
+
+    svg:first-child path {
+        fill: var(--clr-green-900);
+        filter: drop-shadow(5px 5px 0 var(--clr-green-1000));
+    }
 `;
 
-export const LogoText = styled.p `
-    color: var(--clr-green-500);
-    text-align: center;
-    text-shadow: 2px 2px 0 var(--clr-green-1000);
-    -webkit-text-stroke-width: 1.4px;
-    -webkit-text-stroke-color: var(--clr-green-1000);
-    font-family: var(--logo-font),serif;
-    font-size: 36px;
+export const PButton = styled.a`
+    display: flex;
+    padding: 12px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border: 2px solid var(--clr-green-1000);
+    background: var(--clr-green-500);
+    box-shadow: 2px 2px 0 0 var(--clr-green-1000);
+    color: var(--clr-green-1000);
+    font-family: var(--main-font),serif;
+    font-size: 16px;
+    text-decoration: none;
     font-style: normal;
     font-weight: 400;
-    line-height: 100%;
-`;
+    line-height: 100%; /* 16px */
+`
