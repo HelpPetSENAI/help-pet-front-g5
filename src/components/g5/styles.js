@@ -15,11 +15,6 @@ export const LogoContainer = styled.a `
     align-items: center;
     gap: 10px;
     cursor: pointer;
-
-    svg:first-child path {
-        fill: var(--clr-green-900);
-        filter: drop-shadow(5px 5px 0 var(--clr-green-1000));
-    }
 `;
 
 export const PButton = styled.a`
