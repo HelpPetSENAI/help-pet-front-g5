@@ -5,6 +5,7 @@ export const HPLogo = (props) => (
         width={51}
         height={51}
         fill="none"
+        style={{ filter: 'drop-shadow(3px 3px 0px #000)' }}
         {...props}
     >
         <path
@@ -59,6 +60,7 @@ export const HPLogoLabel = (props) => (
         width={137}
         height={40}
         fill="none"
+        style={{ filter: 'drop-shadow(3px 3px 0px #000)' }}
         {...props}
     >
         <mask
