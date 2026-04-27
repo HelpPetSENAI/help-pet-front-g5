@@ -31,7 +31,7 @@ export default function LoginForm({ userType }) {
       <input type="email" placeholder="Digite seu email" style={inputStyle} />
 
       <div style={labelInputRow}>
-        <label style={labelStyle}>DIGITE SUA SENHA</label>
+        <label style={labelStyle}>SUA SENHA</label>
         <a href="#" style={forgotStyle}>esqueceu sua senha?</a>
       </div>
 
