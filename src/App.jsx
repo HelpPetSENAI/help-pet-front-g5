@@ -3,7 +3,7 @@ import ComingSoonPage from './pages/CommingSoonPage'
 import NotFoundPage from './pages/NotFoundPage.jsx'
 import GlobalStyle from './styles/GlobalStyle.js'
 import ExamplePage from './pages/ExamplePage.jsx'
-import MessagePageG6 from './pages/g6-pages/MessagePageG6.jsx'
+import MessagePageG6 from './pages/page-g6/MessagePageG6.jsx'
 
 const router = createBrowserRouter([
   {
