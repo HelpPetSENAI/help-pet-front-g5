@@ -23,22 +23,23 @@ export default function Dock({ page = 'home' }) {
     <DockWrapper isOpen={isOpen}>
       {isOpen && (
         <DockMenu aria-label="Menu principal">
-          <DockButton onClick={closeMenu}>
+          {/* dps mudar as rotas '/coming-soon' para a sua rota de destino*/}
+          <DockButton onClick={() => { closeMenu(); navigate('/coming-soon') }}>
             <ConfigurationIcon />
             <span>Configurações</span>
           </DockButton>
-
-          <DockButton onClick={closeMenu}>
+          {/* dps mudar as rotas '/coming-soon' para a sua rota de destino*/}
+          <DockButton onClick={() => { closeMenu(); navigate('/coming-soon') }}>
             <DonatePetIcon />
             <span>Doar Pet</span>
           </DockButton>
-
-          <DockButton onClick={closeMenu}>
+          {/* dps mudar as rotas '/coming-soon' para a sua rota de destino*/}
+          <DockButton onClick={() => { closeMenu(); navigate('/coming-soon') }}>
             <MyDonateIcon />
             <span>Minhas Doações</span>
           </DockButton>
-
-          <DockButton onClick={closeMenu}>
+          {/* dps mudar as rotas '/coming-soon' para a sua rota de destino*/}
+          <DockButton onClick={() => { closeMenu(); navigate('/coming-soon') }}>
             <SearchIcon />
             <span>Pesquisar</span>
           </DockButton>
@@ -51,7 +52,7 @@ export default function Dock({ page = 'home' }) {
           className={activeIcon === 'home' ? 'active' : ''}
           onClick={() => {
             closeMenu()
-            navigate('/')
+            navigate('/') // rota Home
           }}
         >
           <HomeIcon active={activeIcon === 'home'} />
@@ -70,7 +71,7 @@ export default function Dock({ page = 'home' }) {
           className={activeIcon === 'message' ? 'active' : ''}
           onClick={() => {
             closeMenu()
-            navigate('/message')
+            navigate('/message') // rota Mensagens
           }}
         >
           <MessageIcon active={activeIcon === 'message'} />
