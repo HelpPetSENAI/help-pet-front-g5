@@ -21,7 +21,12 @@ const router = createBrowserRouter([
   {
     path: '/petPage',
     element: <PetPage />,
-  }
+  },
+
+  {
+    path: 'DonatePage',
+    element: <DOnatePage/>,
+  },e
 ])
 
 export default function App() {
