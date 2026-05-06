@@ -1,6 +1,6 @@
 import LoginForm from "../../components/Forms/LoginForm";
 import ButtonLogin from "../../components/Button/Button";
-import SocialLogin from "../../components/buttonSocial/SocialLogin"; 
+import SocialLogin from "../../components/buttonSocial/SocialLogin";
 
 export default function Login() {
   return (
@@ -10,7 +10,7 @@ export default function Login() {
 
         <ButtonLogin />
 
-        <SocialLogin />
+        <SocialLogin type="login" />
       </div>
 
       <div className="right-side"></div>

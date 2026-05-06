@@ -6,7 +6,7 @@ import ExamplePage from "./pages/ExamplePage.jsx";
 import Login from "./pages/Login/Login.jsx";
 
 import GlobalStyle from "./styles/GlobalStyle.js";
-import SignUp from "./pages/SIgnUp/SignUp.jsx";
+import SignUp from "./pages/SignUp/SignUp.jsx";
 
 const router = createBrowserRouter([
   {
