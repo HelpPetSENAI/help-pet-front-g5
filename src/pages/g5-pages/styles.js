@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+// PetPage
+
 export const PageContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -73,4 +75,34 @@ export const PetInfoTitle = styled.h2`
     font-style: normal;
     font-weight: 400;
     line-height: 100%;
+`
+
+// DonationPage
+
+export const Filter = styled.div`
+    display: flex;
+    padding: 0 30px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    gap: 17px;
+`
+
+export const Title = styled.h1`
+    color: var(--green-1000, #061407);
+    font-family: var(--main-font);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;`
+
+export const DonationsWrapper = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 750px;
+    gap: 20px;
 `
