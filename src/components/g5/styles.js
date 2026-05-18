@@ -17,7 +17,7 @@ export const LogoContainer = styled.a`
     cursor: pointer;
 `;
 
-export const PButton = styled.a`
+export const PButton = styled.button`
     display: flex;
     padding: 12px 20px;
     justify-content: center;

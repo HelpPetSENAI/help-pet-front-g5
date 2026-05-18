@@ -19,6 +19,8 @@ export default function DonationsPage() {
 
     ];
 
+
+
     return (
         <S.PageContainer>
             <Header/>
@@ -45,6 +47,8 @@ export default function DonationsPage() {
                 </Filter>
                 <S.Title>Minhas Doações</S.Title>
                 <S.DonationsWrapper>
+
+                    {}
                     <DonationCard isActive={true} donationLink="/petPage" name={"noem"} size={"3"} species={"cat"}
                                   breed={"batata"}/>
                     <DonationCard isActive={true} donationLink="/petPage" name={"noem"} size={"3"} species={"dog"}

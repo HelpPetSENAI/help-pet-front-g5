@@ -33,7 +33,7 @@ export default function PetPage() {
                     <p>{pet.weight}</p>
                     <p>{pet.cep}</p>
                 </S.PetInfo>
-                <PrimaryButton label="Converse com o doador" icon={<ConversationIcon/>} ref="/"/>
+                <PrimaryButton label="Converse com o doador" icon={<ConversationIcon/>}/>
             </S.PageContent>
         </S.PageContainer>
     )
