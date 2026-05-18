@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { StyledDock } from './DockStyle'
 import { useNavigate } from 'react-router-dom'
+import { DockWrapper, DockCompact, DockMenu, DockButton } from './DockStyle'
 import HomeIcon from '../../assets/icons/HomeIcon'
 import MessageIcon from '../../assets/icons/MessageIcon'
 import MoreSettingsIcon from '../../assets/icons/MoreSettingsIcon'
@@ -13,93 +13,70 @@ export default function Dock({ page = 'home' }) {
   const [isOpen, setIsOpen] = useState(false)
   const navigate = useNavigate()
 
-  const toggleSettings = () => {
-    setIsOpen(!isOpen)
-  }
-
-  const closeMenu = () => {
-    setIsOpen(false)
-  }
+  const toggleSettings = () => setIsOpen(!isOpen)
+  const closeMenu = () => setIsOpen(false)
 
   // regra: se o menu está aberto, só o settings fica ativo
   const activeIcon = isOpen ? 'settings' : page
 
   return (
-    <StyledDock isOpen={isOpen}>
-      {isOpen ? (
-        <nav className="dock-menu" aria-label="Menu principal">
-          <button
-            type="button"
-            className={activeIcon === 'settings' ? 'menu-item active' : 'menu-item'}
-            onClick={toggleSettings}
-          >
-            <ConfigurationIcon active={activeIcon === 'settings'} />
+    <DockWrapper isOpen={isOpen}>
+      {isOpen && (
+        <DockMenu aria-label="Menu principal">
+          {/* dps mudar as rotas '/coming-soon' para a sua rota de destino*/}
+          <DockButton onClick={() => { closeMenu(); navigate('/coming-soon') }}>
+            <ConfigurationIcon />
             <span>Configurações</span>
-          </button>
-
-          <button
-            type="button"
-            className={activeIcon === 'donate' ? 'menu-item active' : 'menu-item'}
-            onClick={closeMenu}
-          >
-            <DonatePetIcon active={activeIcon === 'donate'} />
+          </DockButton>
+          {/* dps mudar as rotas '/coming-soon' para a sua rota de destino*/}
+          <DockButton onClick={() => { closeMenu(); navigate('/coming-soon') }}>
+            <DonatePetIcon />
             <span>Doar Pet</span>
-          </button>
-
-          <button
-            type="button"
-            className={activeIcon === 'mine' ? 'menu-item active' : 'menu-item'}
-            onClick={closeMenu}
-          >
-            <MyDonateIcon active={activeIcon === 'mine'} />
+          </DockButton>
+          {/* dps mudar as rotas '/coming-soon' para a sua rota de destino*/}
+          <DockButton onClick={() => { closeMenu(); navigate('/coming-soon') }}>
+            <MyDonateIcon />
             <span>Minhas Doações</span>
-          </button>
-
-          <button
-            type="button"
-            className={activeIcon === 'search' ? 'menu-item active' : 'menu-item'}
-            onClick={closeMenu}
-          >
-            <SearchIcon active={activeIcon === 'search'} />
+          </DockButton>
+          {/* dps mudar as rotas '/coming-soon' para a sua rota de destino*/}
+          <DockButton onClick={() => { closeMenu(); navigate('/coming-soon') }}>
+            <SearchIcon />
             <span>Pesquisar</span>
-          </button>
-        </nav>
-      ) : null}
+          </DockButton>
+        </DockMenu>
+      )}
 
-      <div className="dock-compact">
-        {/* HOME */}
-        <button
-          type="button"
-          className={activeIcon === 'home' ? 'compact-item active' : 'compact-item'}
+      <DockCompact>
+        <DockButton
+          compact
+          className={activeIcon === 'home' ? 'active' : ''}
           onClick={() => {
             closeMenu()
-            navigate('/') // navega para Home
+            navigate('/') // rota Home
           }}
         >
           <HomeIcon active={activeIcon === 'home'} />
-        </button>
+        </DockButton>
 
-        {/* SETTINGS */}
-        <button
-          type="button"
-          className={activeIcon === 'settings' ? 'compact-item active' : 'compact-item'}
+        <DockButton
+          compact
+          className={activeIcon === 'settings' ? 'active' : ''}
           onClick={toggleSettings}
         >
           <MoreSettingsIcon active={activeIcon === 'settings'} />
-        </button>
+        </DockButton>
 
-        {/* MESSAGE */}
-        <button
-          type="button"
-          className={activeIcon === 'message' ? 'compact-item active' : 'compact-item'}
+        <DockButton
+          compact
+          className={activeIcon === 'message' ? 'active' : ''}
           onClick={() => {
             closeMenu()
-            navigate('/message') // navega para Mensagens
+            navigate('/message') // rota Mensagens
           }}
         >
           <MessageIcon active={activeIcon === 'message'} />
-        </button>
-      </div>
-    </StyledDock>
+        </DockButton>
+      </DockCompact>
+    </DockWrapper>
   )
 }
