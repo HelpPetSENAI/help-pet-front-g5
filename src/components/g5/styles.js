@@ -20,6 +20,7 @@ export const LogoContainer = styled.a`
 export const PButton = styled.button`
     display: flex;
     padding: 12px 20px;
+    cursor: pointer;
     justify-content: center;
     align-items: center;
     gap: 4px;
@@ -126,49 +127,5 @@ export const Tagspecies = styled.div`
     border-radius: 50px;
 
     ${({variant}) => variants[variant]}
-    
+
 `;
-
-// DonationCard
-
-export const CardContainer = styled.a`
-    position: relative;
-    display: flex;
-    opacity: ${(props) => props.isActive ? 1 : 0.35};
-    text-decoration: none;
-    color: #000;
-    width: 315px;
-    cursor: ${props => (props.isActive ? 'pointer' : 'not-allowed')};
-    padding: 16px;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 16px;
-    font-family: var(--main-font), sans-serif;
-
-    border-radius: 20px;
-    border: 2px solid var(--crl-red-1000, #160404);
-    background: var(--crl-neutral-100, #FFF);
-
-    box-shadow: 2px 2px 0 0 var(--crl-red-1000, #160404);
-`;
-
-export const CardDescription = styled.div`
-    display: flex;
-    padding: 0 8px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2px;
-    align-self: stretch;
-`;
-
-export const CardDescriptionWrapper = styled.div`
-    display: flex;
-    gap: 8px;
-`;
-
-export const TagWrapper = styled.div`
-    position: absolute;
-    right: 22px;
-    top: -12px;
-`;
-

@@ -22,8 +22,8 @@ const router = createBrowserRouter([
     element: <ExamplePage />
   },
   {
-    path: '/petPage',
-    element: <PetPage />,
+    path: '/petPage/:id',
+    element: <PetPage />
   },
   {
     path: '/message',
