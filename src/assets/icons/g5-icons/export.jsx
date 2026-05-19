@@ -27,6 +27,7 @@ export const BackArrow = (props) => (
         height={34}
         fill="none"
         {...props}
+        cursor={"pointer"}
     >
         <path
             stroke="#061407"
