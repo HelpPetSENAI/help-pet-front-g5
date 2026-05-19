@@ -4,10 +4,15 @@ import Header from "../../components/g5/Header.jsx";
 import Image from "../../assets/images/g5-placeholder-img.png";
 import * as S from "./styles.js";
 import {useDonation} from "../../helpers/g5/donationApi.js";
+import {useLocation, useParams} from "react-router-dom";
 
 export default function PetPage() {
-    const {pet, loading, err} = useDonation(1)
+    const {id} = useParams();
+    const location = useLocation();
+    const {pet, loading, err} = useDonation(id)
+    console.log(pet, location)
     if (loading) return <p>Carregando</p>
+    // vai continuar com erro pq o endpoint view/{id} da 403, problema no backend do g2 talvez
     if (err) return <p>Erro</p>;
     // aqui eu pego de outra pãgina sla como
     return (
@@ -33,7 +38,8 @@ export default function PetPage() {
                     <p>{pet.weight}</p>
                     <p>{pet.cep}</p>
                 </S.PetInfo>
-                <PrimaryButton label="Converse com o doador" icon={<ConversationIcon/>}/>
+                <PrimaryButton ownerId={pet.userId} label="Converse com o doador" icon={<ConversationIcon/>}/>
+            {/*    quero passar pet.ownerId para o post*/}
             </S.PageContent>
         </S.PageContainer>
     )
